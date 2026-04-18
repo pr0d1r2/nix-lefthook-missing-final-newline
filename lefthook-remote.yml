@@ -1,0 +1,10 @@
+---
+pre-commit:
+  commands:
+    missing-final-newline:
+      run: timeout ${LEFTHOOK_MISSING_FINAL_NEWLINE_TIMEOUT:-30} lefthook-missing-final-newline {staged_files}
+
+pre-push:
+  commands:
+    missing-final-newline:
+      run: timeout ${LEFTHOOK_MISSING_FINAL_NEWLINE_TIMEOUT:-30} lefthook-missing-final-newline {push_files}
